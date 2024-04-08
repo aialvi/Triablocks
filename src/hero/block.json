@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/hero",
+	"version": "0.1.0",
+	"title": "Hero",
+	"category": "triablocks",
+	"icon": "layout",
+	"description": "A custom two columns hero block with a title, subtitle, and background image.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "triablocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
