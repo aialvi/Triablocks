@@ -8,8 +8,17 @@
 	"icon": "layout",
 	"description": "A custom two columns hero block with a title, subtitle, and background image.",
 	"example": {},
+	"attributes": {
+		"image": {
+			"type": "object"
+		}
+	},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"text": true,
+			"background": true
+		}
 	},
 	"textdomain": "triablocks",
 	"editorScript": "file:./index.js",
