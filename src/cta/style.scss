@@ -1,0 +1,32 @@
+/**
+ * The following styles get applied both on the front of the site
+ * and in the editor.
+ *
+ */
+
+.wp-block-triablocks-cta {
+	.cta-columns {
+		margin: 0 -15px;
+		.cta-column {
+			display: flex;
+			align-items: center;
+
+			.cta-paragraph {
+				font-size: 1.125rem;
+				margin-block-start: 0;
+				margin-bottom: 0;
+			}
+
+			.wp-block-button {
+				.wp-block-button__link {
+					font-family: "Roboto", sans-serif;
+					font-size: 16px;
+					margin-left: 4px;
+					border-radius: 0;
+					margin-right: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+}
