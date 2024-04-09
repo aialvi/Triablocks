@@ -6,7 +6,8 @@
 
 .wp-block-triablocks-cta {
 	.cta-columns {
-		margin: 0 -15px;
+		margin: 0 auto;
+		padding: 20px;
 		.cta-column {
 			display: flex;
 			align-items: center;
@@ -21,7 +22,6 @@
 				.wp-block-button__link {
 					font-family: "Roboto", sans-serif;
 					font-size: 16px;
-					margin-left: 4px;
 					border-radius: 0;
 					margin-right: 0;
 					right: 0;
