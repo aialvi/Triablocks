@@ -1,0 +1,24 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-triablocks-services {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 16px;
+	margin: 0 auto;
+	padding: 0 16px;
+
+	// Tablet.
+	@media (min-width: 767px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	// Desktop.
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/services",
+	"version": "0.1.0",
+	"title": "Services",
+	"category": "triablocks",
+	"icon": "admin-generic",
+	"description": "Services block to showcase the service you provide",
+	"example": {},
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": true,
+			"background": true,
+			"text": true
+		}
+	},
+	"textdomain": "services",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

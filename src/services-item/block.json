@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/services-item",
+	"version": "0.1.0",
+	"title": "Service",
+	"category": "widgets",
+	"icon": "smiley",
+	"parent": ["triablocks/services"],
+	"description": "Single service block for the Services parent block",
+	"example": {},
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": true,
+			"background": true,
+			"text": true
+		}
+	},
+	"textdomain": "services-item",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
