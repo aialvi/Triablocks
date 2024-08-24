@@ -1,4 +1,4 @@
-=== Triablocks ===
+=== TriaBlocks ===
 Contributors:      Aminul Islam Alvi
 Tags:              block
 Tested up to:      6.1
@@ -6,20 +6,19 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Triablocks is a block plugin for WordPress block editor. It provides a collection of blocks for building pages and posts.
+Triablocks is a Full Site Editing (FSE) block plugin for WordPress that provides a collection of customizable blocks designed to enhance your website's functionality and design.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+Triablocks is a powerful WordPress plugin that unlocks the full potential of Full Site Editing (FSE). It offers a rich collection of versatile blocks that allow you to design and customize every aspect of your website effortlessly. Whether you're building a portfolio, blog, or business site, Triablocks provides the tools you need to create a visually stunning and fully functional website.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+With Triablocks, you can easily add and customize blocks such as headers, footers, galleries, sliders, testimonials, and more. Each block is designed with flexibility in mind, allowing you to tailor every detail to your liking. The plugin also ensures that your website remains responsive, delivering a seamless user experience across all devices.
+
+Triablocks is compatible with any FSE-ready WordPress theme, making it a must-have tool for anyone looking to leverage the latest advancements in WordPress design. Whether you're a seasoned developer or a beginner, Triablocks offers an intuitive and user-friendly interface that simplifies the site-building process.
+
+Elevate your WordPress site with Triablocks and take control of your design with precision and ease.
 
 == Installation ==
-
-This section describes how to install the plugin and get it working.
-
-e.g.
 
 1. Upload the plugin files to the `/wp-content/plugins/triablocks` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
@@ -27,29 +26,19 @@ e.g.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= What is TriaBlocks? =
 
-An answer to that question.
+TriaBlocks is a Full Site Editing (FSE) block plugin for WordPress that provides a collection of customizable blocks designed to enhance your website's functionality and design.
 
-= What about foo bar? =
+= Is TriaBlocks compatible with all themes? =
 
-Answer to foo bar dilemma.
+TriaBlocks is designed to work seamlessly with any FSE-compatible theme. If your theme supports Full Site Editing, TriaBlocks will integrate smoothly.
 
-== Screenshots ==
+=  Does Triablocks offer responsive design options =
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+Absolutely! Triablocks ensures that all blocks are responsive and look great on any device, including mobile phones and tablets.
 
 == Changelog ==
 
 = 0.1.0 =
 * Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
