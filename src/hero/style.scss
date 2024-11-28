@@ -6,58 +6,59 @@
  */
 
 .wp-block-triablocks-hero {
+
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 1px;
 
-	.tria-hero__column--text {
-		margin: 10px;
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
 
-		.tria-hero__title {
-			font-size: 2.25rem;
-			margin-block-start: 0;
-		}
+	.tria-hero__column {
 
-		.tria-hero__paragraph {
-			font-size: 1.125rem;
-			margin-block-start: 0;
-		}
+		&--text {
+			margin: 10px;
 
-		.tria-hero__buttons {
-			.wp-block-button {
-				width: 100%;
-				.wp-block-button__link {
-					font-family: "Roboto", sans-serif;
-					font-size: 16px;
-					margin-top: 20px;
-					margin-left: 4px;
-					width: 50%;
-					border-radius: 0;
+			.tria-hero__title {
+				font-size: 2.25rem;
+				margin-block-start: 0;
+			}
+
+			.tria-hero__paragraph {
+				font-size: 1.125rem;
+				margin-block-start: 0;
+			}
+
+			.tria-hero__buttons {
+
+				.wp-block-button {
+					width: 100%;
+
+					.wp-block-button__link {
+						font-family: Roboto, sans-serif;
+						font-size: 16px;
+						margin-top: 20px;
+						margin-left: 4px;
+						width: 50%;
+						border-radius: 0;
+					}
 				}
 			}
 		}
-	}
 
-	.tria-hero__column--image {
-		background-size: cover;
-		background-position: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		&--image {
+			background-size: cover;
+			background-position: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-		.tria-hero__select-image-button {
-			font-size: 1.125rem;
-			background-color: #fff;
-			color: #0073aa;
-		}
-	}
-}
-
-@media (min-width: 768px) {
-	.wp-block-triablocks-hero {
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		.tria-hero__column--text {
-			margin: 40px;
+			.tria-hero__select-image-button {
+				font-size: 1.125rem;
+				background-color: #fff;
+				color: #0073aa;
+			}
 		}
 	}
 }

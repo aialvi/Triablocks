@@ -5,27 +5,28 @@
  */
 
 .wp-block-triablocks-cta {
-	.cta-columns {
+
+	.cta__columns {
 		margin: 0 auto;
-		padding: 20px;
-		.cta-column {
+		padding: 1.25rem;
+
+		.cta__column--main,
+		.cta__column--side {
 			display: flex;
 			align-items: center;
 
-			.cta-paragraph {
-				font-size: 1.125rem;
+			.cta__paragraph {
+				font-size: 1.12rem;
 				margin-block-start: 0;
 				margin-bottom: 0;
 			}
 
-			.wp-block-button {
-				.wp-block-button__link {
-					font-family: "Roboto", sans-serif;
-					font-size: 16px;
-					border-radius: 0;
-					margin-right: 0;
-					right: 0;
-				}
+			.cta__button {
+				font-family: Roboto, sans-serif;
+				font-size: 1rem;
+				border-radius: 0;
+				margin-right: 0;
+				right: 0;
 			}
 		}
 	}

@@ -6,8 +6,10 @@
 
 .wp-block-triablocks-services {
 	margin: 20px 0;
+
 	> .block-editor-inner-blocks {
 		min-width: 840px !important;
+
 		> .block-editor-block-list__layout {
 			width: 100%;
 			max-width: 1172px;
@@ -25,6 +27,7 @@
 		color: #000;
 		background-color: #fff !important;
 		box-shadow: none;
+
 		&:hover {
 			background-color: #f3f3f3 !important;
 		}

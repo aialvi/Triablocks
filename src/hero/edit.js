@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -16,8 +16,8 @@ import {
 	MediaUpload,
 	MediaUploadCheck,
 	InnerBlocks,
-} from "@wordpress/block-editor";
-import { Button } from "@wordpress/components";
+} from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -25,73 +25,77 @@ import { Button } from "@wordpress/components";
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import "./editor.scss";
+import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param {Object}   root0
+ * @param {Object}   root0.attributes
+ * @param {Function} root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
  * @return {Element} Element to render.
  */
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit( { attributes, setAttributes } ) {
 	const { image } = attributes;
 
 	const selectImageButton = image
-		? __("Change Image", "tkm-blocks")
-		: __("Select Image", "tkm-blocks");
+		? __( 'Change Image', 'tkm-blocks' )
+		: __( 'Select Image', 'tkm-blocks' );
 
 	const template = [
 		[
-			"core/heading",
+			'core/heading',
 			{
-				placeholder: "Lorem Ipsum",
+				placeholder: 'Lorem Ipsum',
 				level: 2,
-				className: "tria-hero__title",
+				className: 'tria-hero__title',
 			},
 		],
 		[
-			"core/paragraph",
+			'core/paragraph',
 			{
-				placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				className: "tria-hero__paragraph",
+				placeholder:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				className: 'tria-hero__paragraph',
 			},
 		],
 		[
-			"core/buttons",
+			'core/buttons',
 			{
-				className: "tria-hero__buttons",
+				className: 'tria-hero__buttons',
 			},
 		],
 	];
 
 	return (
-		<div {...useBlockProps()}>
+		<div { ...useBlockProps() }>
 			<div className="tria-hero__column--text">
-				<InnerBlocks template={template} />
+				<InnerBlocks template={ template } />
 			</div>
 			<div
 				className="tria-hero__column--image"
-				style={{ backgroundImage: `url(${image?.url})` }}
+				style={ { backgroundImage: `url(${ image?.url })` } }
 			>
 				<MediaUploadCheck>
 					<MediaUpload
-						allowedTypes={["image"]}
-						onSelect={(image) => {
-							setAttributes({ image });
-						}}
-						value={image}
-						render={({ open }) => {
+						allowedTypes={ [ 'image' ] }
+						onSelect={ ( selectedImage ) => {
+							setAttributes( { selectedImage } );
+						} }
+						value={ image }
+						render={ ( { open } ) => {
 							return (
 								<Button
 									className="tria-hero__select-image-button"
-									onClick={open}
+									onClick={ open }
 								>
-									{selectImageButton}
+									{ selectImageButton }
 								</Button>
 							);
-						}}
+						} }
 					/>
 				</MediaUploadCheck>
 			</div>

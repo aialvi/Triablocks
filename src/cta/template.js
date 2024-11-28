@@ -1,38 +1,39 @@
 const template = [
 	[
-		"core/columns",
+		'core/columns',
 		{
-			className: "cta-columns",
+			className: 'cta__columns',
 		},
 		[
 			[
-				"core/column",
+				'core/column',
 				{
 					width: 80,
-					className: "cta-column",
+					className: 'cta__column--main',
 				},
 				[
 					[
-						"core/paragraph",
+						'core/paragraph',
 						{
-							className: "cta-paragraph",
+							className: 'cta__paragraph',
 							placeholder:
-								"Duis aute irure dolor in reprehenderit in voluptate velit.",
+								'Duis aute irure dolor in reprehenderit in voluptate velit.',
 						},
 					],
 				],
 			],
 			[
-				"core/column",
+				'core/column',
 				{
 					width: 20,
-					className: "cta-column",
+					className: 'cta__column--side',
 				},
 				[
 					[
-						"core/button",
+						'core/button',
 						{
-							text: "Call To Action",
+							className: 'cta__button',
+							text: 'Call To Action',
 						},
 					],
 				],

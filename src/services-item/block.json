@@ -6,7 +6,7 @@
 	"title": "Service",
 	"category": "widgets",
 	"icon": "smiley",
-	"parent": ["triablocks/services"],
+	"parent": [ "triablocks/services" ],
 	"description": "Single service block for the Services parent block",
 	"example": {},
 	"supports": {
