@@ -1,33 +1,35 @@
 /**
  * The following styles get applied both on the front of the site
  * and in the editor.
- *
  */
 
 .wp-block-triablocks-cta {
+	.cta {
+		&__columns {
+			margin: 0 auto;
+			padding: 1.25rem;
+		}
 
-	.cta__columns {
-		margin: 0 auto;
-		padding: 1.25rem;
-
-		.cta__column--main,
-		.cta__column--side {
-			display: flex;
-			align-items: center;
-
-			.cta__paragraph {
-				font-size: 1.12rem;
-				margin-block-start: 0;
-				margin-bottom: 0;
+		&__column {
+			&--main,
+			&--side {
+				display: flex;
+				align-items: center;
 			}
+		}
 
-			.cta__button {
-				font-family: Roboto, sans-serif;
-				font-size: 1rem;
-				border-radius: 0;
-				margin-right: 0;
-				right: 0;
-			}
+		&__paragraph {
+			font-size: 1.12rem;
+			margin-block-start: 0;
+			margin-bottom: 0;
+		}
+
+		&__button {
+			font-family: Roboto, sans-serif;
+			font-size: 1rem;
+			border-radius: 0;
+			margin-right: 0;
+			right: 0;
 		}
 	}
 }

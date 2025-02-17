@@ -1,12 +1,8 @@
 /**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
+ * Hero block styles for both editor and front-end
  */
 
 .wp-block-triablocks-hero {
-
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 1px;
@@ -14,37 +10,12 @@
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	}
+}
 
-	.tria-hero__column {
-
+.tria-hero {
+	&__column {
 		&--text {
 			margin: 10px;
-
-			.tria-hero__title {
-				font-size: 2.25rem;
-				margin-block-start: 0;
-			}
-
-			.tria-hero__paragraph {
-				font-size: 1.125rem;
-				margin-block-start: 0;
-			}
-
-			.tria-hero__buttons {
-
-				.wp-block-button {
-					width: 100%;
-
-					.wp-block-button__link {
-						font-family: Roboto, sans-serif;
-						font-size: 16px;
-						margin-top: 20px;
-						margin-left: 4px;
-						width: 50%;
-						border-radius: 0;
-					}
-				}
-			}
 		}
 
 		&--image {
@@ -53,12 +24,37 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
-			.tria-hero__select-image-button {
-				font-size: 1.125rem;
-				background-color: #fff;
-				color: #0073aa;
-			}
 		}
 	}
+
+	&__title {
+		font-size: 2.25rem;
+		margin-block-start: 0;
+	}
+
+	&__paragraph {
+		font-size: 1.125rem;
+		margin-block-start: 0;
+	}
+
+	&__buttons {
+		.wp-block-button {
+			width: 100%;
+		}
+	}
+
+	&__select-image-button {
+		font-size: 1.125rem;
+		background-color: #fff;
+		color: #0073aa;
+	}
+}
+
+.wp-block-button__link {
+	font-family: Roboto, sans-serif;
+	font-size: 16px;
+	margin-top: 20px;
+	margin-left: 4px;
+	width: 50%;
+	border-radius: 0;
 }
