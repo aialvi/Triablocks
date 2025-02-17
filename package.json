@@ -1,8 +1,8 @@
 {
 	"name": "triablocks",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"description": "A collection of blocks for the WordPress block editor.",
+	"author": "Aminul Islam Alvi",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
