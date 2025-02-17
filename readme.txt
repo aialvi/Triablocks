@@ -1,6 +1,6 @@
-=== TriaBlocks ===
+=== Triablocks ===
 Contributors:      Aminul Islam Alvi
-Tags:              block, blocks, fse, full site editing, gutenberg, site editor, triablocks
+Tags:              blocks, fse, full site editing, gutenberg, triablocks
 Tested up to:      6.7
 Stable tag:        0.1.0
 License:           GPL-2.0-or-later
@@ -25,13 +25,13 @@ Elevate your WordPress site with Triablocks and take control of your design with
 
 == Frequently Asked Questions ==
 
-= What is TriaBlocks? =
+= What is Triablocks? =
 
-TriaBlocks is a Full Site Editing (FSE) block plugin for WordPress that provides a collection of customizable blocks designed to enhance your website's functionality and design.
+Triablocks is a Full Site Editing (FSE) block plugin for WordPress that provides a collection of customizable blocks designed to enhance your website's functionality and design.
 
-= Is TriaBlocks compatible with all themes? =
+= Is Triablocks compatible with all themes? =
 
-TriaBlocks is designed to work seamlessly with any FSE-compatible theme. If your theme supports Full Site Editing, TriaBlocks will integrate smoothly.
+Triablocks is designed to work seamlessly with any FSE-compatible theme. If your theme supports Full Site Editing, Triablocks will integrate smoothly.
 
 =  Does Triablocks offer responsive design options =
 
