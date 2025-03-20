@@ -4,7 +4,7 @@
 	"name": "triablocks/services-item",
 	"version": "0.1.0",
 	"title": "Service",
-	"category": "widgets",
+	"category": "triablocks",
 	"icon": "smiley",
 	"parent": [ "triablocks/services" ],
 	"description": "Single service block for the Services parent block",
