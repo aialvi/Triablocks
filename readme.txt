@@ -1,9 +1,13 @@
 === Triablocks ===
-Contributors:      Aminul Islam Alvi
+
+Contributors:      aialvi
+Donate link:       https://www.buymeacoffee.com/aialvi
 Tags:              blocks, fse, full site editing, gutenberg, triablocks
-Tested up to:      6.7
+Requires at least: 5.0
+Tested up to:      6.7.2
 Stable tag:        0.1.0
-License:           GPL-2.0-or-later
+Requires PHP:      5.6
+License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
 Triablocks is an FSE block plugin for WordPress, offering customizable blocks to enhance your site's design and functionality.
