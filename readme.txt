@@ -21,6 +21,10 @@ Triablocks is compatible with any FSE-ready WordPress theme, making it a must-ha
 
 Elevate your WordPress site with Triablocks and take control of your design with precision and ease.
 
+We continuously update Triablocks with reliable support and new features to ensure that you have the best tools at your disposal. Our team is dedicated to providing you with a seamless experience, and we welcome your feedback and suggestions for future updates.
+
+See Our Official GitHub page: [Official Triablocks GitHub](https://github.com/aialvi/triablocks)
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/triablocks` directory, or install the plugin through the WordPress plugins screen directly.
