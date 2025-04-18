@@ -14,9 +14,20 @@
 		"lint:fix": "wp-scripts lint-js --fix .",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"tailwind:watch": "tailwindcss -i ./src/tailwind.css -o ./src/tailwind-output.css --watch",
+		"tailwind:build": "tailwindcss -i ./src/tailwind.css -o ./src/tailwind-output.css --minify",
+		"dev": "concurrently \"npm run start\" \"npm run tailwind:watch\"",
+		"build:all": "npm run tailwind:build && npm run build"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27.6.0"
+		"@wordpress/scripts": "^27.6.0",
+		"autoprefixer": "^10.4.16",
+		"concurrently": "^8.2.2",
+		"postcss": "^8.4.31",
+		"postcss-import": "^15.1.0",
+		"postcss-loader": "^7.3.3",
+		"postcss-preset-env": "^9.3.0",
+		"tailwindcss": "^3.4.1"
 	}
 }

@@ -1,0 +1,240 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-triablocks-contact-us {
+	.tb-contact-us-container {
+		padding: 2rem 1rem;
+
+		@media (min-width: 768px) {
+			padding: 4rem 2rem;
+		}
+	}
+
+	.tb-contact-us-heading {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 3rem;
+
+		.tb-contact-heading {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-bottom: 0.75rem;
+			color: #1a202c;
+
+			@media (min-width: 768px) {
+				font-size: 2.5rem;
+			}
+		}
+
+		.tb-contact-subheading {
+			font-size: 1.125rem;
+			color: #718096;
+			margin-top: 0;
+
+			@media (min-width: 768px) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	.tb-contact-us-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+
+		@media (min-width: 768px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.tb-contact-form-container {
+			.tb-contact-form {
+				/* Base form styles */
+				.tb-form-group {
+					margin-bottom: 1.5rem;
+
+					.tb-form-label {
+						display: block;
+						margin-bottom: 0.5rem;
+						font-weight: 500;
+						color: #4a5568;
+					}
+
+					.tb-form-control {
+						display: block;
+						width: 100%;
+						padding: 0.75rem 1rem;
+						font-size: 1rem;
+						line-height: 1.5;
+						border-radius: 0.375rem;
+						transition: border-color 0.15s ease-in-out;
+					}
+
+					textarea.tb-form-control {
+						resize: vertical;
+					}
+				}
+
+				.tb-form-submit {
+					.tb-btn {
+						display: inline-block;
+						font-weight: 600;
+						text-align: center;
+						vertical-align: middle;
+						cursor: pointer;
+						padding: 0.75rem 1.5rem;
+						font-size: 1rem;
+						line-height: 1.5;
+						border-radius: 0.375rem;
+						transition: all 0.15s ease-in-out;
+					}
+
+					.tb-btn-primary {
+						background-color: #0073aa;
+						color: white;
+						border: none;
+
+						&:hover {
+							background-color: #005885;
+						}
+					}
+				}
+
+				/* Style variations */
+				&.tb-contact-form-standard {
+					.tb-form-control {
+						border: 1px solid #e2e8f0;
+						background-color: #fff;
+
+						&:focus {
+							border-color: #90cdf4;
+							outline: none;
+							box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+						}
+					}
+				}
+
+				&.tb-contact-form-modern {
+					.tb-form-control {
+						border: none;
+						border-bottom: 2px solid #e2e8f0;
+						border-radius: 0;
+						background-color: #f7fafc;
+						padding: 0.75rem 0.5rem;
+
+						&:focus {
+							border-bottom-color: #0073aa;
+							outline: none;
+						}
+					}
+				}
+
+				&.tb-contact-form-bordered {
+					padding: 2rem;
+					border: 2px solid #e2e8f0;
+					border-radius: 0.5rem;
+
+					.tb-form-control {
+						border: 1px solid #e2e8f0;
+						background-color: #fff;
+
+						&:focus {
+							border-color: #0073aa;
+							outline: none;
+						}
+					}
+
+					.tb-btn-primary {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.tb-contact-info-container {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+
+			.tb-contact-info {
+				background-color: #f7fafc;
+				padding: 1.5rem;
+				border-radius: 0.5rem;
+
+				.tb-contact-info-heading {
+					margin-bottom: 1.5rem;
+
+					h3 {
+						font-size: 1.25rem;
+						font-weight: 600;
+						margin: 0;
+						color: #2d3748;
+					}
+				}
+
+				.tb-contact-info-item {
+					display: flex;
+					align-items: flex-start;
+					margin-bottom: 1rem;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					.tb-contact-icon {
+						flex-shrink: 0;
+						margin-right: 1rem;
+
+						.dashicons {
+							font-size: 1.5rem;
+							width: 1.5rem;
+							height: 1.5rem;
+							color: #0073aa;
+						}
+					}
+
+					.tb-contact-text {
+						p {
+							margin: 0;
+							font-size: 1rem;
+							line-height: 1.5;
+							color: #4a5568;
+						}
+					}
+				}
+			}
+
+			.tb-contact-map {
+				height: 300px;
+				border-radius: 0.5rem;
+				overflow: hidden;
+
+				iframe {
+					border: 0;
+				}
+
+				.tb-map-placeholder {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					background-color: #f7fafc;
+
+					.dashicons {
+						font-size: 3rem;
+						width: 3rem;
+						height: 3rem;
+						color: #a0aec0;
+						margin-bottom: 1rem;
+					}
+
+					p {
+						color: #718096;
+					}
+				}
+			}
+		}
+	}
+}

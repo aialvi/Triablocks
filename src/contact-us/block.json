@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/contact-us",
+	"version": "0.1.0",
+	"title": "Contact Us",
+	"category": "triablocks",
+	"icon": "email",
+	"description": "A responsive contact form section with customizable fields and styling",
+	"example": {},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Get In Touch"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+		},
+		"formStyle": {
+			"type": "string",
+			"default": "standard"
+		},
+		"formId": {
+			"type": "string",
+			"default": ""
+		},
+		"showMap": {
+			"type": "boolean",
+			"default": true
+		},
+		"mapEmbedUrl": {
+			"type": "string",
+			"default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3159986289!2d-74.25986548248684!3d40.69714941680757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1638176385402!5m2!1sen!2s"
+		},
+		"showContactInfo": {
+			"type": "boolean",
+			"default": true
+		},
+		"address": {
+			"type": "string",
+			"default": "123 Street Name, City, State 12345"
+		},
+		"email": {
+			"type": "string",
+			"default": "contact@example.com"
+		},
+		"phone": {
+			"type": "string",
+			"default": "+1 (555) 123-4567"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "contact-us",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

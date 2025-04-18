@@ -1,0 +1,108 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-triablocks-testimonials {
+	.tb-testimonials-container {
+		padding: 2rem 1rem;
+
+		@media (min-width: 768px) {
+			padding: 4rem 2rem;
+		}
+	}
+
+	.tb-testimonials-heading {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 3rem;
+
+		.tb-testimonials-title {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-bottom: 0.75rem;
+			color: #1a202c;
+
+			@media (min-width: 768px) {
+				font-size: 2.5rem;
+			}
+		}
+
+		.tb-testimonials-subtitle {
+			font-size: 1.125rem;
+			color: #718096;
+			margin-top: 0;
+
+			@media (min-width: 768px) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	.tb-testimonials-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+
+		@media (min-width: 640px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	/* Layout specific styles */
+	&.tb-testimonials-layout-carousel {
+		.tb-testimonials-grid {
+			display: flex;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			-webkit-overflow-scrolling: touch;
+			padding-bottom: 1rem;
+
+			/* Hide scrollbar in most browsers */
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			.wp-block-triablocks-testimonial-item {
+				flex: 0 0 90%;
+				scroll-snap-align: center;
+				margin-right: 1rem;
+
+				@media (min-width: 640px) {
+					flex: 0 0 45%;
+				}
+
+				@media (min-width: 1024px) {
+					flex: 0 0 30%;
+				}
+			}
+		}
+	}
+
+	&.tb-testimonials-layout-masonry {
+		.tb-testimonials-grid {
+			column-count: 1;
+			column-gap: 1.5rem;
+
+			@media (min-width: 640px) {
+				column-count: 2;
+			}
+
+			@media (min-width: 1024px) {
+				column-count: 3;
+			}
+
+			.wp-block-triablocks-testimonial-item {
+				display: inline-block;
+				width: 100%;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}

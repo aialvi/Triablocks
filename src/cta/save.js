@@ -4,23 +4,33 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param {Object} root0
+ * @param {Object} root0.attributes
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save({ attributes }) {
+	const { layout } = attributes;
+
+	const blockProps = useBlockProps.save({
+		className: "tb-cta-container",
+	});
+
 	return (
-		<section { ...useBlockProps.save() }>
-			<div className="row">
-				<InnerBlocks.Content />
+		<div {...blockProps}>
+			<div className="tb-cta-content">
+				<div className="tb-cta-text">
+					<InnerBlocks.Content />
+				</div>
 			</div>
-		</section>
+		</div>
 	);
 }

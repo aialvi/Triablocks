@@ -2,21 +2,32 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "triablocks/cta",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"title": "CTA",
 	"category": "triablocks",
 	"icon": "megaphone",
-	"description": "CTA block with a title and button",
+	"description": "A dynamic call-to-action block with multiple layout options.",
 	"example": {},
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": "default"
+		}
+	},
 	"supports": {
 		"html": false,
 		"color": {
 			"background": true,
 			"text": true,
-			"link": true
+			"link": true,
+			"gradients": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
 		}
 	},
-	"textdomain": "cta",
+	"textdomain": "triablocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

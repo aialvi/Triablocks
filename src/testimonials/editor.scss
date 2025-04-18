@@ -1,0 +1,41 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+
+.wp-block-triablocks-testimonials {
+	/* Editor specific styles */
+	.tb-testimonials-grid .block-editor-inner-blocks {
+		width: 100%;
+	}
+
+	.block-editor-block-list__layout {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 1.5rem;
+		width: 100%;
+	}
+
+	/* Layout specific adjustments in editor */
+	&.tb-testimonials-layout-carousel .block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding-bottom: 1rem;
+
+		.wp-block-triablocks-testimonial-item {
+			flex: 0 0 300px;
+			margin-right: 1rem;
+		}
+	}
+
+	&.tb-testimonials-layout-masonry .block-editor-block-list__layout {
+		column-count: 3;
+		column-gap: 1.5rem;
+		display: block;
+
+		.wp-block-triablocks-testimonial-item {
+			break-inside: avoid;
+			margin-bottom: 1.5rem;
+		}
+	}
+}

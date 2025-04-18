@@ -1,0 +1,150 @@
+/* Base Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component classes using @apply */
+@layer components {
+	/* Hero Block Components */
+	.tb-hero-container {
+		@apply tb-relative tb-overflow-hidden tb-w-full tb-py-12 tb-px-4;
+	}
+
+	.tb-hero-content {
+		@apply tb-flex tb-flex-col md:tb-flex-row tb-items-center tb-justify-between tb-gap-8;
+	}
+
+	.tb-hero-text {
+		@apply tb-flex-1 tb-space-y-4;
+	}
+
+	.tb-hero-title {
+		@apply tb-text-4xl md:tb-text-5xl tb-font-bold tb-text-secondary-800;
+	}
+
+	.tb-hero-paragraph {
+		@apply tb-text-lg tb-text-secondary-600;
+	}
+
+	.tb-hero-image {
+		@apply tb-flex-1 tb-relative tb-min-h-[300px];
+	}
+
+	/* CTA Block Components */
+	.tb-cta-container {
+		@apply tb-py-8 tb-px-6 tb-bg-primary-700 tb-text-white tb-rounded-lg;
+	}
+
+	.tb-cta-content {
+		@apply tb-flex tb-flex-col md:tb-flex-row tb-items-center tb-justify-between tb-gap-6;
+	}
+
+	.tb-cta-text {
+		@apply tb-flex-1;
+	}
+
+	.tb-cta-paragraph {
+		@apply tb-text-xl tb-font-medium;
+	}
+
+	.tb-cta-button-container {
+		@apply tb-flex tb-justify-end;
+	}
+
+	.tb-cta-button {
+		@apply tb-bg-white tb-text-primary-700 tb-px-6 tb-py-3 tb-rounded-md tb-font-medium tb-transition-all tb-duration-200 hover:tb-bg-primary-50;
+	}
+
+	/* Services Block Components */
+	.tb-services-container {
+		@apply tb-grid tb-grid-cols-1 md:tb-grid-cols-2 lg:tb-grid-cols-3 tb-gap-8 tb-py-12;
+	}
+
+	/* Service Item Components */
+	.tb-service-item {
+		@apply tb-flex tb-flex-col tb-bg-white tb-p-6 tb-rounded-lg tb-shadow-lg tb-transition-all tb-duration-300 hover:tb-shadow-xl;
+	}
+
+	.tb-service-icon {
+		@apply tb-text-primary-500 tb-mb-4 tb-w-16 tb-h-16;
+	}
+
+	.tb-service-title {
+		@apply tb-text-2xl tb-font-bold tb-mb-3 tb-text-secondary-800;
+	}
+
+	.tb-service-description {
+		@apply tb-text-secondary-600 tb-mb-4;
+	}
+
+	/* Testimonial Block Components */
+	.tb-testimonials-container {
+		@apply tb-py-12 tb-px-4;
+	}
+
+	.tb-testimonials-grid {
+		@apply tb-grid tb-grid-cols-1 md:tb-grid-cols-2 lg:tb-grid-cols-3 tb-gap-6;
+	}
+
+	/* Testimonial Item Components */
+	.tb-testimonial-item {
+		@apply tb-bg-white tb-p-6 tb-rounded-lg tb-shadow-md tb-border tb-border-gray-100;
+	}
+
+	.tb-testimonial-content {
+		@apply tb-mb-4 tb-italic tb-text-secondary-700;
+	}
+
+	.tb-testimonial-author {
+		@apply tb-flex tb-items-center;
+	}
+
+	.tb-testimonial-avatar {
+		@apply tb-w-12 tb-h-12 tb-rounded-full tb-mr-4;
+	}
+
+	.tb-testimonial-info {
+		@apply tb-flex tb-flex-col;
+	}
+
+	.tb-testimonial-name {
+		@apply tb-font-medium tb-text-secondary-800;
+	}
+
+	.tb-testimonial-position {
+		@apply tb-text-sm tb-text-secondary-500;
+	}
+
+	/* Contact Us Block Components */
+	.tb-contact-container {
+		@apply tb-py-12 tb-px-4 tb-bg-white tb-rounded-lg tb-shadow-lg;
+	}
+
+	.tb-contact-title {
+		@apply tb-text-3xl tb-font-bold tb-text-center tb-mb-8 tb-text-secondary-800;
+	}
+
+	.tb-contact-form {
+		@apply tb-max-w-2xl tb-mx-auto;
+	}
+
+	.tb-form-field {
+		@apply tb-mb-6;
+	}
+
+	.tb-form-label {
+		@apply tb-block tb-text-sm tb-font-medium tb-mb-2 tb-text-secondary-700;
+	}
+
+	.tb-form-input {
+		@apply tb-w-full tb-px-4 tb-py-2 tb-border tb-border-gray-300 tb-rounded-md tb-shadow-sm focus:tb-outline-none focus:tb-ring-primary-500 focus:tb-border-primary-500;
+	}
+
+	.tb-form-textarea {
+		@apply tb-w-full tb-px-4 tb-py-2 tb-border tb-border-gray-300 tb-rounded-md tb-shadow-sm focus:tb-outline-none focus:tb-ring-primary-500 focus:tb-border-primary-500;
+	}
+
+	.tb-form-button {
+		@apply tb-w-full tb-bg-primary-700 tb-text-white tb-py-3 tb-px-6 tb-rounded-md tb-font-medium tb-transition-all tb-duration-200 hover:tb-bg-primary-800;
+	}
+}

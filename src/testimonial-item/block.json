@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/testimonial-item",
+	"version": "0.1.0",
+	"title": "Testimonial",
+	"category": "triablocks",
+	"icon": "format-quote",
+	"parent": [ "triablocks/testimonials" ],
+	"description": "Single testimonial block for the Testimonials parent block",
+	"example": {},
+	"attributes": {
+		"authorName": {
+			"type": "string",
+			"default": ""
+		},
+		"authorPosition": {
+			"type": "string",
+			"default": ""
+		},
+		"authorAvatar": {
+			"type": "object"
+		},
+		"rating": {
+			"type": "number",
+			"default": 5
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": true,
+			"background": true,
+			"text": true
+		}
+	},
+	"textdomain": "testimonial-item",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

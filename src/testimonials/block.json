@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "triablocks/testimonials",
+	"version": "0.1.0",
+	"title": "Testimonials",
+	"category": "triablocks",
+	"icon": "testimonial",
+	"description": "Display customer testimonials in a responsive grid layout",
+	"example": {},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid"
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"heading": {
+			"type": "string",
+			"default": "What Our Clients Say"
+		},
+		"subheading": {
+			"type": "string",
+			"default": "Trusted by businesses worldwide"
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "testimonials",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -13,21 +13,34 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @param {Object} root0
  * @param {Object} root0.attributes
- * @param {Object} root0.attributes.image
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
  * @return {Element} Element to render.
  */
-export default function save( { attributes: { image } } ) {
+export default function save({ attributes }) {
+	const { image, imagePosition, overlayEnabled } = attributes;
+
+	const blockProps = useBlockProps.save({
+		className: 'tb-hero-container',
+	});
+
+	const imageStyle = image?.url ? {
+		backgroundImage: `url(${image.url})`,
+		backgroundSize: 'cover', 
+		backgroundPosition: 'center',
+	} : {};
+
 	return (
-		<div { ...useBlockProps.save() }>
-			<div className="tria-hero__column--text">
-				<InnerBlocks.Content />
+		<div {...blockProps}>
+			<div className={`tb-hero-content ${imagePosition === 'left' ? 'tb-flex-row-reverse' : ''}`}>
+				<div className="tb-hero-text">
+					<InnerBlocks.Content />
+				</div>
+				
+				<div className="tb-hero-image" style={imageStyle}>
+					{overlayEnabled && <div className="tb-absolute tb-inset-0 tb-bg-black tb-opacity-40"></div>}
+				</div>
 			</div>
-			<div
-				className="tria-hero__column--image"
-				style={ { backgroundImage: `url('${ image?.url }')` } }
-			/>
 		</div>
 	);
 }
