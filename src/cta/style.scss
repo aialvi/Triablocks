@@ -1,35 +1,372 @@
 /**
- * The following styles get applied both on the front of the site
+ * The following styles get applied both on the front of your site
  * and in the editor.
+ *
+ * Modern CTA block styles with support for various design options
  */
 
 .wp-block-triablocks-cta {
-	.cta {
-		&__columns {
-			margin: 0 auto;
-			padding: 1.25rem;
+	--cta-padding: 4rem 2rem;
+	--cta-border-radius: 0.5rem;
+	--cta-transition: all 0.3s ease;
+	--cta-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	// Button default variables
+	--cta-button-gap: 1rem;
+	--cta-button-bg-color: var(--wp--preset--color--primary, #3182ce);
+	--cta-button-text-color: #ffffff;
+	--cta-button-border-color: var(--wp--preset--color--primary, #3182ce);
+	--cta-button-border-radius: 0.375rem;
+	--cta-button-border-width: 1px;
+	--cta-button-padding-top: 0.75rem;
+	--cta-button-padding-right: 1.5rem;
+	--cta-button-padding-bottom: 0.75rem;
+	--cta-button-padding-left: 1.5rem;
+
+	// Base container styles
+	.tb-cta-container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		padding: var(--cta-padding);
+		transition: var(--cta-transition);
+		margin: 0;
+	}
+
+	// Background overlay for image backgrounds
+	.tb-cta-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #000;
+		z-index: 0;
+	}
+
+	// Content wrapper with alignment options
+	.tb-cta-content-wrap {
+		position: relative;
+		z-index: 1;
+		margin: 0 auto;
+		width: 100%;
+		max-width: var(--wp--style--global--content-size, 1200px);
+
+		&.tb-cta-width-contained {
+			max-width: var(--wp--style--global--content-size, 1200px);
+			padding: 0 1rem;
 		}
 
-		&__column {
-			&--main,
-			&--side {
-				display: flex;
-				align-items: center;
+		&.tb-cta-width-full {
+			max-width: 100%;
+		}
+
+		// Content alignment
+		&.tb-cta-align-left {
+			text-align: left;
+
+			.tb-cta-buttons,
+			.wp-block-buttons {
+				justify-content: flex-start;
 			}
 		}
 
-		&__paragraph {
-			font-size: 1.12rem;
-			margin-block-start: 0;
-			margin-bottom: 0;
+		&.tb-cta-align-center {
+			text-align: center;
+
+			.tb-cta-buttons,
+			.wp-block-buttons {
+				justify-content: center;
+			}
 		}
 
-		&__button {
-			font-family: Roboto, sans-serif;
-			font-size: 1rem;
-			border-radius: 0;
-			margin-right: 0;
-			right: 0;
+		&.tb-cta-align-right {
+			text-align: right;
+
+			.tb-cta-buttons,
+			.wp-block-buttons {
+				justify-content: flex-end;
+			}
 		}
+	}
+
+	// Main content area
+	.tb-cta-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		.tb-cta-heading {
+			font-size: 2rem;
+			font-weight: 700;
+			margin: 0 0 0.5rem;
+			line-height: 1.2;
+
+			@media (min-width: 768px) {
+				font-size: 2.5rem;
+			}
+		}
+
+		.tb-cta-paragraph {
+			font-size: 1.125rem;
+			margin: 0 0 1.5rem;
+			line-height: 1.6;
+
+			@media (min-width: 768px) {
+				font-size: 1.25rem;
+			}
+		}
+
+		.tb-cta-buttons,
+		.wp-block-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--cta-button-gap, 1rem);
+		}
+	}
+
+	// Layout-specific styles
+	&.tb-cta-layout-split {
+		.tb-cta-columns {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			align-items: center;
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			.tb-cta-column {
+				flex: 1;
+
+				&.tb-cta-column-right {
+					@media (min-width: 768px) {
+						display: flex;
+						justify-content: flex-end;
+					}
+				}
+			}
+		}
+	}
+
+	&.tb-cta-layout-with-stats {
+		.tb-cta-stats {
+			margin: 2rem 0;
+
+			.wp-block-column {
+				text-align: center;
+				padding: 1rem;
+			}
+
+			.tb-stat-number {
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin: 0 0 0.5rem;
+				line-height: 1.2;
+				color: currentColor;
+			}
+
+			.tb-stat-label {
+				font-size: 1rem;
+				opacity: 0.8;
+				margin: 0;
+			}
+		}
+	}
+
+	// Style variants
+	&.tb-cta-style-standard {
+		.tb-cta-container {
+			color: #ffffff;
+		}
+	}
+
+	&.tb-cta-style-modern {
+		.tb-cta-container {
+			border-radius: var(--cta-border-radius);
+			box-shadow: var(--cta-shadow);
+			color: #ffffff;
+			// Background color now set via inline style from attributes
+		}
+	}
+
+	&.tb-cta-style-minimal {
+		.tb-cta-container {
+			background-color: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: var(--cta-border-radius);
+			color: inherit;
+		}
+	}
+
+	&.tb-cta-style-gradient {
+		.tb-cta-container {
+			// Default gradient if no custom background is set
+			background: linear-gradient(
+				135deg,
+				var(--wp--preset--color--primary, #3182ce) 0%,
+				var(--wp--preset--color--secondary, #805ad5) 100%
+			);
+			color: #ffffff;
+		}
+	}
+
+	&.tb-cta-style-boxed {
+		.tb-cta-container {
+			border-radius: var(--cta-border-radius);
+			background-color: #ffffff;
+			box-shadow: var(--cta-shadow);
+			color: var(--wp--preset--color--text, #1a202c);
+			border: 1px solid rgba(0, 0, 0, 0.05);
+		}
+	}
+
+	// BUTTON STYLES
+
+	// Button default styling - applies to all buttons
+	.wp-block-button__link,
+	.wp-element-button {
+		transition: var(--cta-transition);
+		padding: var(--cta-button-padding-top, 0.75rem)
+			var(--cta-button-padding-right, 1.5rem)
+			var(--cta-button-padding-bottom, 0.75rem)
+			var(--cta-button-padding-left, 1.5rem);
+		font-weight: 600;
+
+		// Custom button colors if set
+		background-color: var(
+			--cta-button-bg-color,
+			var(--wp--preset--color--primary, #3182ce)
+		) !important;
+		color: var(--cta-button-text-color, #ffffff) !important;
+		border-color: var(
+			--cta-button-border-color,
+			var(--wp--preset--color--primary, #3182ce)
+		) !important;
+		border-radius: var(--cta-button-border-radius, 0.375rem) !important;
+	}
+
+	// Button size variations
+	&.tb-cta-button-size-small {
+		.wp-block-button__link,
+		.wp-element-button {
+			font-size: 0.875rem;
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	&.tb-cta-button-size-medium {
+		.wp-block-button__link,
+		.wp-element-button {
+			font-size: 1rem;
+			padding: 0.75rem 1.5rem;
+		}
+	}
+
+	&.tb-cta-button-size-large {
+		.wp-block-button__link,
+		.wp-element-button {
+			font-size: 1.125rem;
+			padding: 1rem 2rem;
+		}
+	}
+
+	&.tb-cta-button-size-xlarge {
+		.wp-block-button__link,
+		.wp-element-button {
+			font-size: 1.25rem;
+			padding: 1.25rem 2.5rem;
+		}
+	}
+
+	// Full width button
+	&.tb-cta-button-full-width {
+		.wp-block-button,
+		.wp-block-buttons {
+			width: 100%;
+		}
+
+		.wp-block-button__link,
+		.wp-element-button {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	// Button style variations
+	&.tb-cta-button-style-filled {
+		.wp-block-button__link,
+		.wp-element-button {
+			border-width: 0;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				filter: brightness(110%);
+			}
+		}
+	}
+
+	&.tb-cta-button-style-outline {
+		.wp-block-button__link,
+		.wp-element-button {
+			background-color: transparent !important;
+			border-style: solid;
+			border-width: var(--cta-button-border-width, 1px) !important;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.05) !important;
+			}
+		}
+	}
+
+	&.tb-cta-button-style-ghost {
+		.wp-block-button__link,
+		.wp-element-button {
+			background-color: transparent !important;
+			border: none;
+			text-decoration: underline;
+			padding: var(--cta-button-padding-top, 0.5rem)
+				var(--cta-button-padding-right, 1rem)
+				var(--cta-button-padding-bottom, 0.5rem)
+				var(--cta-button-padding-left, 1rem);
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.05) !important;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&.tb-cta-button-style-pill {
+		.wp-block-button__link,
+		.wp-element-button {
+			border-radius: 9999px !important;
+
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+		}
+	}
+}
+
+// Add special responsive styles for full and wide alignment
+.wp-block-triablocks-cta.alignfull {
+	.tb-cta-container {
+		width: 100%;
+	}
+}
+
+.wp-block-triablocks-cta.alignwide {
+	.tb-cta-container {
+		max-width: var(--wp--style--global--wide-size, 1400px);
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

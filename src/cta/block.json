@@ -6,12 +6,79 @@
 	"title": "CTA",
 	"category": "triablocks",
 	"icon": "megaphone",
-	"description": "A dynamic call-to-action block with multiple layout options.",
+	"description": "A modern call-to-action block with multiple layout options and full-width support.",
 	"example": {},
 	"attributes": {
 		"layout": {
 			"type": "string",
 			"default": "default"
+		},
+		"style": {
+			"type": "string",
+			"default": "standard"
+		},
+		"contentWidth": {
+			"type": "string",
+			"default": "contained"
+		},
+		"backgroundType": {
+			"type": "string",
+			"default": "color"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"backgroundImage": {
+			"type": "object"
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 40
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "filled"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "medium"
+		},
+		"buttonFullWidth": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonColor": {
+			"type": "string"
+		},
+		"buttonTextColor": {
+			"type": "string"
+		},
+		"buttonBorderColor": {
+			"type": "string"
+		},
+		"buttonBorderRadius": {
+			"type": "number"
+		},
+		"buttonBorderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"buttonPadding": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"buttonGap": {
+			"type": "number",
+			"default": 16
 		}
 	},
 	"supports": {
@@ -25,7 +92,8 @@
 		"spacing": {
 			"margin": true,
 			"padding": true
-		}
+		},
+		"align": ["wide", "full"]
 	},
 	"textdomain": "triablocks",
 	"editorScript": "file:./index.js",
