@@ -18,27 +18,85 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({ attributes }) {
-	const { image, imagePosition, overlayEnabled } = attributes;
+	const { 
+		image, 
+		overlayEnabled = false,
+		overlayOpacity = 40,
+		contentPosition = 'center',
+		textColor = '#ffffff',
+		overlayColor = '#000000',
+		minHeight = 500
+	} = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: 'tb-hero-container',
+		className: 'tb-hero-full',
 	});
 
+	// Calculate inline styles
+	const containerStyle = {
+		minHeight: `${minHeight}px`,
+	};
+
+	// Set default background color when no image is provided
 	const imageStyle = image?.url ? {
 		backgroundImage: `url(${image.url})`,
-		backgroundSize: 'cover', 
+		backgroundSize: 'cover',
 		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+	} : {
+		backgroundColor: '#f5f5f5', // Default background color when no image is selected
+	};
+
+	const overlayStyle = overlayEnabled ? {
+		backgroundColor: overlayColor,
+		opacity: overlayOpacity / 100,
 	} : {};
+
+	const contentStyle = {
+		color: textColor,
+	};
+
+	// Content position class
+	const getContentPositionClass = () => {
+		switch (contentPosition) {
+			case 'top':
+				return 'tb-items-start';
+			case 'bottom':
+				return 'tb-items-end';
+			default:
+				return 'tb-items-center';
+		}
+	};
 
 	return (
 		<div {...blockProps}>
-			<div className={`tb-hero-content ${imagePosition === 'left' ? 'tb-flex-row-reverse' : ''}`}>
-				<div className="tb-hero-text">
-					<InnerBlocks.Content />
-				</div>
+			<div 
+				className="tb-hero-container tb-relative tb-w-full tb-overflow-hidden" 
+				style={containerStyle}
+			>
+				<div 
+					className="tb-hero-background tb-absolute tb-inset-0" 
+					style={imageStyle} 
+					aria-hidden="true"
+				></div>
 				
-				<div className="tb-hero-image" style={imageStyle}>
-					{overlayEnabled && <div className="tb-absolute tb-inset-0 tb-bg-black tb-opacity-40"></div>}
+				{overlayEnabled && (
+					<div 
+						className="tb-hero-overlay tb-absolute tb-inset-0" 
+						style={overlayStyle}
+						aria-hidden="true"
+					></div>
+				)}
+				
+				<div 
+					className={`tb-hero-content-wrapper tb-absolute tb-inset-0 tb-flex tb-justify-center ${getContentPositionClass()} tb-px-4 tb-py-8`}
+				>
+					<div 
+						className="tb-hero-content tb-max-w-4xl tb-w-full tb-relative tb-z-10"
+						style={contentStyle}
+					>
+						<InnerBlocks.Content />
+					</div>
 				</div>
 			</div>
 		</div>

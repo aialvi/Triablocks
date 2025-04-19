@@ -1,60 +1,204 @@
 /**
  * Hero block styles for both editor and front-end
+ * 
+ * These styles create a minimal, elegant full-width hero with smooth transitions
  */
 
 .wp-block-triablocks-hero {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 1px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
 
-	@media (min-width: 768px) {
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	.tb-hero-container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		transition: all 0.3s ease-in-out;
 	}
-}
 
-.tria-hero {
-	&__column {
-		&--text {
-			margin: 10px;
+	.tb-hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition:
+			transform 0.5s ease-in-out,
+			opacity 0.5s ease-in-out;
+		will-change: transform;
+	}
+
+	.tb-hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.tb-hero-content-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		padding: 2rem 1rem;
+
+		&.tb-items-start {
+			align-items: flex-start;
 		}
 
-		&--image {
-			background-size: cover;
-			background-position: center;
-			display: flex;
+		&.tb-items-center {
 			align-items: center;
-			justify-content: center;
+		}
+
+		&.tb-items-end {
+			align-items: flex-end;
 		}
 	}
 
-	&__title {
+	.tb-hero-content {
+		max-width: 80rem;
+		width: 100%;
+		position: relative;
+		z-index: 10;
+		transition:
+			opacity 0.8s ease-out,
+			transform 0.8s ease-out;
+		padding: 0 1rem;
+
+		@media (min-width: 768px) {
+			padding: 0 2rem;
+		}
+	}
+
+	.tb-hero-title {
 		font-size: 2.25rem;
-		margin-block-start: 0;
-	}
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		transition: transform 0.4s ease-out;
 
-	&__paragraph {
-		font-size: 1.125rem;
-		margin-block-start: 0;
-	}
+		@media (min-width: 768px) {
+			font-size: 3rem;
+		}
 
-	&__buttons {
-		.wp-block-button {
-			width: 100%;
+		@media (min-width: 1024px) {
+			font-size: 3.75rem;
 		}
 	}
 
-	&__select-image-button {
+	.tb-hero-paragraph {
 		font-size: 1.125rem;
-		background-color: #fff;
-		color: #0073aa;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		max-width: 40rem;
+		transition: transform 0.4s ease-out;
+
+		@media (min-width: 768px) {
+			font-size: 1.25rem;
+		}
+	}
+
+	.tb-hero-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+
+		.wp-block-button {
+			margin: 0;
+		}
+	}
+
+	.tb-hero-button {
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease,
+			background-color 0.3s ease;
+		border-radius: 0.25rem;
+		font-weight: 500;
+
+		&:hover,
+		&:focus {
+			transform: translateY(-3px);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		}
+
+		&:active {
+			transform: translateY(-1px);
+		}
+
+		&.tb-hero-button-primary {
+			background-color: var(--wp--preset--color--primary, #0073e5);
+			color: #ffffff;
+		}
+
+		&.tb-hero-button-secondary {
+			background-color: transparent;
+			color: var(--wp--preset--color--primary, #0073e5);
+			border: 2px solid var(--wp--preset--color--primary, #0073e5);
+		}
+	}
+
+	.tb-hero-select-image {
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.25rem;
+		font-weight: 500;
+		background-color: #ffffff;
+		color: var(--wp--preset--color--primary, #0073e5);
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+		&:hover {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+			transform: translateY(-2px);
+		}
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px rgba(0, 115, 229, 0.3);
+		}
 	}
 }
 
+/* Ensure buttons are styled properly */
 .wp-block-button__link {
-	font-family: Roboto, sans-serif;
-	font-size: 16px;
-	margin-top: 20px;
-	margin-left: 4px;
-	width: 50%;
-	border-radius: 0;
+	font-family: inherit;
+	font-size: 1rem;
+	padding: 0.75rem 1.5rem;
+	text-decoration: none;
+	border-radius: 0.25rem !important;
+	transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+	.wp-block-triablocks-hero {
+		.tb-hero-content {
+			padding: 0 1rem;
+		}
+
+		.tb-hero-buttons {
+			flex-direction: column;
+			width: 100%;
+
+			.wp-block-button {
+				width: 100%;
+			}
+
+			.wp-block-button__link {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
 }

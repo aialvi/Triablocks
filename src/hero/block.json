@@ -6,7 +6,7 @@
 	"title": "Hero",
 	"category": "triablocks",
 	"icon": "layout",
-	"description": "A dynamic hero block with customizable layout options and Tailwind CSS.",
+	"description": "A full-width hero block with elegant transitions and customizable layout options.",
 	"example": {},
 	"attributes": {
 		"image": {
@@ -19,6 +19,26 @@
 		"overlayEnabled": {
 			"type": "boolean",
 			"default": false
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 40
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"contentPosition": {
+			"type": "string",
+			"default": "center"
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"minHeight": {
+			"type": "number",
+			"default": 500
 		}
 	},
 	"supports": {
@@ -30,7 +50,8 @@
 		"spacing": {
 			"margin": true,
 			"padding": true
-		}
+		},
+		"align": ["wide", "full"]
 	},
 	"textdomain": "triablocks",
 	"editorScript": "file:./index.js",

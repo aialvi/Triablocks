@@ -1,5 +1,60 @@
 /**
  * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
  */
+
+.wp-block-triablocks-hero {
+	/* Editor-specific styles */
+	.tb-hero-container {
+		/* Make sure the editor UI works well */
+		min-height: 300px !important;
+	}
+
+	/* Style the placeholder state in the editor */
+	.tb-hero-placeholder {
+		background-color: #f8f9fa;
+		border: 2px dashed #dee2e6;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 2rem;
+	}
+
+	/* Improve visibility of content when no background is set */
+	.tb-hero-content {
+		.block-editor-block-list__layout {
+			> * {
+				min-width: 100%;
+			}
+		}
+	}
+
+	/* Editor button styling adjustments */
+	.tb-hero-button {
+		/* Ensure editor buttons look more like frontend */
+		&.wp-block-button__link {
+			cursor: text;
+		}
+	}
+
+	/* Improve visibility of content when editing */
+	.tb-hero-title,
+	.tb-hero-paragraph {
+		.rich-text {
+			&:focus {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
+
+	/* Fix for inner blocks UI */
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
+}
+
+/* Make sure the hero is truly full-width in the editor */
+.editor-styles-wrapper .wp-block-triablocks-hero {
+	max-width: none;
+	width: 100%;
+}
