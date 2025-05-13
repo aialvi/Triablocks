@@ -32,7 +32,7 @@
 
 	/* CTA Block Components */
 	.tb-cta-container {
-		@apply tb-py-8 tb-px-6 tb-text-white tb-rounded-lg;
+		@apply tb-py-8 tb-px-6 tb-rounded-lg;
 	}
 
 	.tb-cta-content {

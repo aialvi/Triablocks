@@ -24,7 +24,6 @@ export default function save({ attributes }) {
 		contentWidth,
 		backgroundType,
 		backgroundImage,
-		backgroundColor,
 		overlayOpacity,
 		alignment,
 		buttonStyle,
@@ -55,8 +54,6 @@ export default function save({ attributes }) {
 		backgroundStyle.backgroundImage = `url(${backgroundImage.url})`;
 		backgroundStyle.backgroundSize = "cover";
 		backgroundStyle.backgroundPosition = "center";
-	} else if (backgroundType === "color" && backgroundColor) {
-		backgroundStyle.backgroundColor = backgroundColor;
 	}
 
 	// Generate button styles for inline application

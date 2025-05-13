@@ -25,9 +25,6 @@
 			"type": "string",
 			"default": "color"
 		},
-		"backgroundColor": {
-			"type": "string"
-		},
 		"backgroundImage": {
 			"type": "object"
 		},

@@ -51,7 +51,6 @@ export default function Edit({ attributes, setAttributes }) {
 		style = "standard",
 		contentWidth = "contained",
 		backgroundType = "color",
-		backgroundColor,
 		backgroundImage,
 		overlayOpacity = 40,
 		alignment = "center",
@@ -78,7 +77,7 @@ export default function Edit({ attributes, setAttributes }) {
 			"core/paragraph",
 			{
 				placeholder: __("Add your call to action text here...", "triablocks"),
-				className: "tb-cta-paragraph",
+				className: "tb-cta-paragraph text-black",
 				content: __(
 					"Ready to get started? Join thousands of satisfied customers today!",
 					"triablocks"
@@ -454,16 +453,6 @@ export default function Edit({ attributes, setAttributes }) {
 						]}
 						onChange={(value) => setAttributes({ backgroundType: value })}
 					/>
-
-					{backgroundType === "color" && (
-						<div className="tb-color-option">
-							<span>{__("Background Color", "triablocks")}</span>
-							<ColorPalette
-								value={backgroundColor}
-								onChange={(color) => setAttributes({ backgroundColor: color })}
-							/>
-						</div>
-					)}
 
 					{backgroundType === "image" && (
 						<>

@@ -166,7 +166,6 @@
 				font-weight: 700;
 				margin: 0 0 0.5rem;
 				line-height: 1.2;
-				color: currentColor;
 			}
 
 			.tb-stat-label {
@@ -178,17 +177,11 @@
 	}
 
 	// Style variants
-	&.tb-cta-style-standard {
-		.tb-cta-container {
-			color: #ffffff;
-		}
-	}
 
 	&.tb-cta-style-modern {
 		.tb-cta-container {
 			border-radius: var(--cta-border-radius);
 			box-shadow: var(--cta-shadow);
-			color: #ffffff;
 			// Background color now set via inline style from attributes
 		}
 	}
@@ -198,7 +191,6 @@
 			background-color: transparent;
 			border: 1px solid rgba(0, 0, 0, 0.1);
 			border-radius: var(--cta-border-radius);
-			color: inherit;
 		}
 	}
 
@@ -210,7 +202,6 @@
 				var(--wp--preset--color--primary, #3182ce) 0%,
 				var(--wp--preset--color--secondary, #805ad5) 100%
 			);
-			color: #ffffff;
 		}
 	}
 
@@ -219,7 +210,6 @@
 			border-radius: var(--cta-border-radius);
 			background-color: #ffffff;
 			box-shadow: var(--cta-shadow);
-			color: var(--wp--preset--color--text, #1a202c);
 			border: 1px solid rgba(0, 0, 0, 0.05);
 		}
 	}
